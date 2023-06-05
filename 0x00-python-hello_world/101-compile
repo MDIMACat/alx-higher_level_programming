@@ -1,0 +1,3 @@
+#!/bin/bash
+import compileall
+compileall.compile_file('$PYFILE')
