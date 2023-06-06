@@ -6,4 +6,3 @@ for i in range(90, 64, -1):
     else:
         print("{:c}".format(i), end="")
     case_switch = not case_switch
-print()
