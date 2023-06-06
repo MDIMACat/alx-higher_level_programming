@@ -14,5 +14,3 @@ else:
     output += " and is less than 6 and not 0"
 
 print(output)
-
-
