@@ -5,4 +5,3 @@ for i in range(0, 9):
         if (i != 8 or j != 9):
             print(", ", end="")
 print()
-
