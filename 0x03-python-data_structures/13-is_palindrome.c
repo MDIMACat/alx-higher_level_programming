@@ -8,10 +8,10 @@
  * @head: head pointer parameter
  * Return: Void
  */
-void reverse(listint_t **head)
+listint_t *reverse(listint_t *head)
 {
 	listint_t *prev = NULL;
-	listint_t *current = *head;
+	listint_t *current = head;
 	listint_t *next = NULL;
 
 	while (current != NULL)
@@ -21,9 +21,8 @@ void reverse(listint_t **head)
 		prev = current;
 		current = next;
 	}
-	*head = prev;
+	return (prev);
 }
-
 
 /**
  * is_palindrome - checks if linked list is a palindrome
@@ -31,54 +30,54 @@ void reverse(listint_t **head)
  * Return: True or False
  */
 
+
 int is_palindrome(listint_t **head)
 {
-	listint_t *s_ptr = *head;
-	listint_t *f_ptr = *head;
-	listint_t *prev_s_ptr = *head;
-	listint_t *middile_ptr = NULL;
-	listint_t *sec_half = NULL;
-	listint_t *i = NULL;
-	listint_t *j = NULL;
-	bool is_palindrome = true;
+	listint_t *slow = *head;
+	listint_t *fast = *head;
+	listint_t *prev_slow = *head;
+	listint_t *mid = NULL;
+	listint_t *second_half = NULL;
+	int is_palindrome = 1;
 
-	if (*head != NULL && *head->next != NULL)
+	if (*head != NULL && (*head)->next != NULL)
 	{
-		while (f_ptr != NULL && f_ptr->next != NULL)
+		while (fast != NULL && fast->next != NULL)
 		{
-			f_ptr = f_ptr->next->next;
-			prev_s_ptr = s_ptr;
-			s_ptr = s_ptr->next;
+			fast = fast->next->next;
+			prev_slow = slow;
+			slow = slow->next;
 		}
-		if (f_ptr != NULL)
+		if (fast != NULL)
 		{
-			middle_ptr = s_ptr;
-			s_ptr = s_ptr->next;
+			mid = slow;
+			slow = slow->next;
 		}
-		sec_half = s_ptr;
-		prev_s_ptr = NULL;
-		reverse(&sec_half);
+		second_half = slow;
+		prev_slow->next = NULL;
+		second_half = reverse(second_half);
 
-		while (i != NULL && j != NULL)
+		while (*head != NULL && second_half != NULL)
 		{
-			if (i->data != j->data)
+			if ((*head)->n != second_half->n)
 			{
-				is_palindrome = false;
+				is_palindrome = 0;
 				break;
 			}
-			i = i->next;
-			j = j->next;
+			*head = (*head)->next;
+			second_half = second_half->next;
 		}
-		reverse(&sec_half);
-		prev_s_ptr->next = middle_ptr;
-		if (middle_ptr != NULL)
+
+		second_half = reverse(second_half);
+		if (mid != NULL)
 		{
-			middle_ptr->next = sec_half;
+			prev_slow->next = mid;
+			mid->next = second_half;
 		}
 		else
 		{
-			*head = sec_half;
+			prev_slow->next = second_half;
 		}
 	}
-	return (is_palindrome ? 1 : 0);
+	return (is_palindrome);
 }
