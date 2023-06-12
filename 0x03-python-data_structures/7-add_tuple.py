@@ -19,6 +19,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
         n1, n2 = tuple_b[:2]
     else:
         n1, n2 = 0, 0
-    total1 = num1 + n1
-    total2 = num2 + n2
-    return (total1, total2)
+
+    result = (num1 + n1, num2 + n2)
+    return result
