@@ -24,4 +24,7 @@
         Write a function that returns a new dictionary with all values multiplied by 2
     10. Best score 
         Write a function that returns a key with the biggest integer value.
+    11. Multiply by using map 
+        Write a function that returns a list with all values multiplied by a number without using any loops.
+    
         
