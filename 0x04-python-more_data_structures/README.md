@@ -16,4 +16,5 @@
         Write a function that returns the number of keys in a dictionary.
     6. Print sorted dictionary 
         Write a function that prints a dictionary by ordered keys.
-        
+    7. Update dictionary 
+        Write a function that replaces or adds key/value in a dictionary.
