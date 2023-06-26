@@ -17,4 +17,5 @@
         Write a function that raises a type exception.
     6. Raise a message 
         Write a function that raises a name exception with a message.
-        
+    9. ByteCode -> Python #4 
+        Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
