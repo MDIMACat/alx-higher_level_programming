@@ -13,3 +13,8 @@
         Write a function that divides 2 integers and prints the result.
     4. Divide a list 
         Write a function that divides element by element 2 lists.
+    5. Raise exception 
+        Write a function that raises a type exception.
+    6. Raise a message 
+        Write a function that raises a name exception with a message.
+        
