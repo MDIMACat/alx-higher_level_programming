@@ -61,9 +61,10 @@ class Rectangle:
         return rectangle_str.rstrip()
 
     def __repr__(self):
-        """Get str"""
+        """Get repr"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
+        """del method"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
