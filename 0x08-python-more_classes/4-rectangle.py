@@ -1,12 +1,20 @@
 #!/usr/bin/python3
+"""Define a rectangle"""
+
 
 class Rectangle:
+    """Class for rectangle"""
     def __init__(self, width=0, height=0):
+        """Initialize a rectangle
+
+        Args: Width(int) rectangle
+        height (int) rectangle"""
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """Get width"""
         return self.__width
 
     @width.setter
@@ -19,6 +27,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """Get height"""
         return self.__height
 
     @height.setter
@@ -30,14 +39,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
+        """get area"""
         return self.__width * self.__height
 
     def perimeter(self):
+        """Get perimeter"""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """Get str"""
         if self.__width == 0 or self.__height == 0:
             return ""
         rectangle_str = ""
@@ -46,4 +58,5 @@ class Rectangle:
         return rectangle_str.rstrip()
 
     def __repr__(self):
+        """Get str"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
