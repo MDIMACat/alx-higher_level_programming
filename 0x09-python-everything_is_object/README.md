@@ -31,3 +31,4 @@
     26-answer.txt
     27-answer.txt
     28-answer.txt
+    100-magic_string.py
