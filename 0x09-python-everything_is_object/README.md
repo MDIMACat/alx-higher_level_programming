@@ -32,3 +32,4 @@
     27-answer.txt
     28-answer.txt
     100-magic_string.py
+    101-locked_class.py
