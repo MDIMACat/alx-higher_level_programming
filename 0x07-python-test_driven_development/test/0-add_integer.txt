@@ -1,0 +1,68 @@
+"""
+Test Suites for add_integer()
+
+>>> from add_function import add_integer
+
+Test Case 0 (add zero with positive whole number)
+
+>>> add_integer(0, 21)
+21
+
+Test Case 1 (add zero with negative whole number )
+
+>>> add_integer(0, -21)
+-21
+
+Test Case 2 (add zero with zero)
+
+>>> add_integer(0, 0)
+0
+
+Test case 3 (add  Zero with a string)
+
+>>> add_integer(0, "hello")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/siduduzile/Desktop/ALX_PROJECTS/alx-higher_level_programming/alx-higher_level_programming/0x07-python-test_driven_development/add_function.py", line 7, in add_integer
+    raise TypeError("b must be an integer")
+TypeError: b must be an integer
+
+Test case 4 (add zero with a negative float value)
+
+>>> add_integer(0, -12.3)
+-12
+
+Test case 5 (add zero with a positive float value)
+
+>>> add_integer(0, 23.6)
+23
+
+Test case 6 (add zero with a character)
+
+>>> add_integer(0, 'b')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/siduduzile/Desktop/ALX_PROJECTS/alx-higher_level_programming/alx-higher_level_programming/0x07-python-test_driven_development/add_function.py", line 7, in add_integer
+    raise TypeError("b must be an integer")
+TypeError: b must be an integer
+
+Test case 7 (add zero with 3 arguments)
+
+>>> add_integer(0, 13, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test Case 8 (add two string values)
+
+>>> add_integer("hello", "good-bye")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/siduduzile/Desktop/ALX_PROJECTS/alx-higher_level_programming/alx-higher_level_programming/0x07-python-test_driven_development/add_function.py", line 4, in add_integer
+    raise TypeError("a must be an integer")
+TypeError: a must be an integer
+
+
+
+"""
+
