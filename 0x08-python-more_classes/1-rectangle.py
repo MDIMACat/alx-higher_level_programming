@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+"""
+Object for Rectangle
+"""
+
+
 class Rectangle:
+    """
+    This is a class for basic rectangle implementation
+    """
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height

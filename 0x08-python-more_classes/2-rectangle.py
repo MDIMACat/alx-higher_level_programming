@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+"""
+Object for rectangle
+"""
+
+
 class Rectangle:
+    """
+    This is a class that implements a basic rectangle
+    """
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -31,11 +39,9 @@ class Rectangle:
     def area(self):
         answer = self._width * self._height
         return answer
-    
+
     def perimeter(self):
         if self._width == 0 or self._height == 0:
             return 0
         answer = 2 * (self._height + self._width)
         return answer
-    
-    
