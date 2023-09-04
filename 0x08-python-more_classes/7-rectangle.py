@@ -51,13 +51,18 @@ class Rectangle:
         return answer
 
     def __str__(self):
-        if self._width == 0 or self._height == 0:
-            return ""
+        obj_str = ""
 
-        result = ""
-        for _ in range(self._height):
-            result += Rectangle.print_symbol * self._width + "\n"
-        return result.rstrip()
+        if (self._width == 0 or self._height == 0):
+            return (obj_str)
+        for row in range(0, self._height, 1):
+            for col in range(0, self._width, 1):
+                obj_str += str(self.print_symbol)
+            if ((row == self._height - 1) and (col == self._width - 1)):
+                break
+            obj_str += "\n"
+
+        return (obj_str)
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self._width, self._height)
