@@ -24,7 +24,8 @@ def say_my_name(first_name, last_name=""):
     Raises:
     TypeError:
         if both arguements are not string, error message is raised
-
+    ValueError:
+        If no values are passed
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
@@ -32,4 +33,9 @@ def say_my_name(first_name, last_name=""):
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
 
-    print("My name is {} {}".format(first_name, last_name))
+    if first_name and last_name:
+        print("My name is {} {}".format(first_name, last_name))
+    elif first_name:
+        print("My name is {}".format(first_name))
+    else:
+        raise ValueError("No name passed: say_my_name(first_name, last_name)")

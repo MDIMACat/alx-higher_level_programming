@@ -1,4 +1,4 @@
->>> from add_integer import add_integer
+>>> add_integer = __import__('0-add_integer').add_integer  
 
 >>> add_integer(1, 2)
 3
@@ -9,15 +9,15 @@
 >>> add_integer(-1, 5)
 4
 
->>> add_integer("one", 2)
+>>> add_integer("left", 2)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add_integer(1, "two")
+>>> add_integer(1, "right")
 Traceback (most recent call last):
 TypeError: b must be an integer
 
->>> add_integer("one", "two")
+>>> add_integer("left", "right")
 Traceback (most recent call last):
 TypeError: a must be an integer
 

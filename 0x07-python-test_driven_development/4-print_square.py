@@ -3,12 +3,10 @@
 Module used to print out square (#)
 
 example:
->>> print_square(5)
-#####
-#####
-#####
-#####
-#####
+>>> print_square(3)
+###
+###
+###
 """
 
 
@@ -30,9 +28,6 @@ def print_square(size):
         if size is less than 0, error message will appear
     """
     if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-
-    if isinstance(size, float) and size < 0:
         raise TypeError("size must be an integer")
 
     if size < 0:

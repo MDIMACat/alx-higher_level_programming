@@ -1,0 +1,35 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Lizzy")
+My name is Lizzy 
+
+>>> say_my_name("Lizzy", 8)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name("Lizzy", "Ambers")
+My name is Lizzy Ambers
+
+>>> say_my_name()
+Traceback (most recent call last):
+...
+ValueError: No name passed: say_my_name(first_name, last_name)
+
+>>> say_my_name(4, "Ambers")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("")
+Traceback (most recent call last):
+...
+ValueError: No name passed: say_my_name(first_name, last_name)
+
+>>> say_my_name(645)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name(last_name="Ambers")
+My name is  Ambers
