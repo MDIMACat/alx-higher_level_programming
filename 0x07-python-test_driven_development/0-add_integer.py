@@ -1,16 +1,12 @@
 #!/usr/bin/python3
 """
 Modules that adds two integer values
-
-for example
-add_integer(2, 3)
-5
 """
 
 
 def add_integer(a, b=98):
     """
-    add_integer: function prototype used for this module
+ii    add_integer: function prototype used for this module
 
     Parameters:
     a - first arguement to be passed to function (int or float)
@@ -22,7 +18,7 @@ def add_integer(a, b=98):
     Raises
 
     TypeError:
-        Error message is displayed when a value that isn't an integer or float
+       Error message is displayed when a value that isn't an integer or float
     """
     if not isinstance(a, (float, int)):
         raise TypeError("a must be an integer")
