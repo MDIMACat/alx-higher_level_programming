@@ -16,6 +16,8 @@ Welcome to my ALX SE Program project based on python inheritance. In this projec
     9-rectangle.py
     10-square.py
     11-square.py
+    100-my_int.py
+    101-add_attribute.py
 
 ## Author 
 Siduduzile Snenhlanhla Mdima
