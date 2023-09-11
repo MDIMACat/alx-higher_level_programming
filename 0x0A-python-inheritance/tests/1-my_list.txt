@@ -1,0 +1,55 @@
+Testing the module '''Print_sorted'''
+
+#Loading the Class
+>>> MyList = __import__('1-my_list').MyList
+
+#Empty MyList
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
+
+#Negative numbers
+>>> my_list = MyList()
+>>> my_list.append(-5)
+>>> my_list.append(-2)
+>>> my_list.append(-4)
+>>> my_list.append(-1)
+>>> my_list.append(-3)
+>>> print(my_list)
+[-5, -2, -4, -1, -3]
+>>> my_list.print_sorted()
+[-5, -4, -3, -2, -1]
+>>> print(my_list)
+[-5, -2, -4, -1, -3]
+
+#Testing Identitcal Values
+>>> my_list = MyList()
+>>> my_list.append(78)
+>>> my_list.append(78)
+>>> my_list.append(78)
+>>> print(my_list)
+[78, 78, 78]
+>>> my_list.print_sorted()
+[78, 78, 78]
+>>> print(my_list)
+[78, 78, 78]
+
+# Positive numbers
+>>> my_list = MyList()
+>>> my_list.append(10)
+>>> my_list.append(12)
+>>> my_list.append(14)
+>>> my_list.append(16)
+>>> my_list.append(11)
+>>> my_list.append(13)
+>>> my_list.append(15)
+>>> print(my_list)
+[10, 12, 14, 16, 11, 13, 15]
+>>> my_list.print_sorted()
+[10, 11, 12, 13, 14, 15, 16]
+>>> print(my_list)
+[10, 12, 14, 16, 11, 13, 15]
