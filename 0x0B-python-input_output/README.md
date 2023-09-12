@@ -6,6 +6,7 @@ Welcome to my ALX SE program porject on Python File handling. This project has p
 
     0-read_file.py
     1-write_file.py
+    2-append_write.py
 
 ## Author 
 Siduduzile Snenhlanhla Mdima
