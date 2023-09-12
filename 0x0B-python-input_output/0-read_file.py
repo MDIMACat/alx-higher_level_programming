@@ -7,4 +7,4 @@ def read_file(filename=""):
     if filename is not None:
         with open(filename, "r", encoding="utf-8") as file1:
             content = file1.read()
-            print(content)
+            print(content, end="")

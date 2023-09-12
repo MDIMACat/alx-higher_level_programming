@@ -5,7 +5,7 @@ Welcome to my ALX SE program porject on Python File handling. This project has p
 ## Table of content
 
     0-read_file.py
-    
+    1-write_file.py
 
 ## Author 
 Siduduzile Snenhlanhla Mdima
