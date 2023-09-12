@@ -8,6 +8,7 @@ Welcome to my ALX SE program porject on Python File handling. This project has p
     1-write_file.py
     2-append_write.py
     3-to_json_string.py
+    4-from_json_string.py
 
 ## Author 
 Siduduzile Snenhlanhla Mdima
