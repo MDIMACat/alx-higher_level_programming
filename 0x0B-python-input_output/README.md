@@ -10,6 +10,7 @@ Welcome to my ALX SE program porject on Python File handling. This project has p
     3-to_json_string.py
     4-from_json_string.py
     5-save_to_json_file.py
+    6-load_from_json_file.py
 
 ## Author 
 Siduduzile Snenhlanhla Mdima
