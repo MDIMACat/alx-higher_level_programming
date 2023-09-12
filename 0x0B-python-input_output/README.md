@@ -13,5 +13,6 @@ Welcome to my ALX SE program porject on Python File handling. This project has p
     6-load_from_json_file.py
     7-add_item.py
     8-class_to_json.py
+    9-student.py
 ## Author 
 Siduduzile Snenhlanhla Mdima
