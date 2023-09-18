@@ -78,8 +78,11 @@ class Base:
     def load_from_file(cls):
         """that returns a list of instances"""
         filename = f"{cls.__name__}.json"
-        with open(filename, 'r') as file:
-            data = json.load(file)
+        try:
+            with open(filename, 'r') as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            return []
 
         instances = []
         for item in data:
