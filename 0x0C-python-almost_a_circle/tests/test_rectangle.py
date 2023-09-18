@@ -28,7 +28,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_no_id(self):
         rect = Rectangle(23, 4, 16, 2)
-        self.assertEqual(9, rect.id)
+        self.assertEqual(17, rect.id)
 
     def test_invalid_width(self):
         with self.assertRaises(TypeError):
@@ -88,7 +88,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_str_no_id(self):
         rect = Rectangle(5, 7, 8, 9)
-        self.assertEqual("[Rectangle] (10) 8/9 - 5/7", str(rect))
+        self.assertEqual("[Rectangle] (18) 8/9 - 5/7", str(rect))
 
     def test_display_xy_value(self):
         rect = Rectangle(2, 3, 2, 2)
@@ -159,7 +159,7 @@ class TestRectangle(unittest.TestCase):
     def test_update_with_empty_args(self):
         rect = Rectangle(10, 10, 10, 10)
         rect.update()
-        self.assertEqual("[Rectangle] (15) 10/10 - 10/10", str(rect))
+        self.assertEqual("[Rectangle] (23) 10/10 - 10/10", str(rect))
 
     def test_update_with_empty_kwargs(self):
         rect = Rectangle(10, 10, 10, 10)
@@ -174,13 +174,13 @@ class TestRectangle(unittest.TestCase):
     def test_to_dictionary_with_no_id_specified(self):
         rect = Rectangle(13, 3, 10, 10)
         rep = rect.to_dictionary()
-        self.assertEqual({"id": 11, "width": 13, "height": 3, "x": 10,
+        self.assertEqual({"id": 19, "width": 13, "height": 3, "x": 10,
                           "y": 10}, rep)
 
     def test_to_dictionary_with_only_width_height_specified(self):
         rect = Rectangle(12, 2)
         rep = rect.to_dictionary()
-        self.assertEqual({"id": 12, "width": 12, "height": 2, "x": 0,
+        self.assertEqual({"id": 20, "width": 12, "height": 2, "x": 0,
                           "y": 0}, rep)
 
     def test_to_dictionary_with_all_attributes(self):

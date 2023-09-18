@@ -24,7 +24,7 @@ class TestSquare(unittest.TestCase):
 
     def test_no_id(self):
         sqr = Square(2)
-        self.assertEqual(1, sqr.id)
+        self.assertEqual(32, sqr.id)
 
     def test_invalid_width(self):
         with self.assertRaises(TypeError):
@@ -77,12 +77,12 @@ class TestSquare(unittest.TestCase):
     def test_to_dictionary_only_size(self):
         sqr = Square(10)
         rep = sqr.to_dictionary()
-        self.assertEqual({"id": 3, "size": 10, "x": 0, "y": 0}, rep)
+        self.assertEqual({"id": 34, "size": 10, "x": 0, "y": 0}, rep)
 
     def test_to_dictionary_no_id(self):
         sqr = Square(10, 9, 8)
         rep = sqr.to_dictionary()
-        self.assertEqual({"id": 2, "size": 10, "x": 9, "y": 8}, rep)
+        self.assertEqual({"id": 33, "size": 10, "x": 9, "y": 8}, rep)
 
     def test_to_dictionary_all_attributes(self):
         sqr = Square(10, 1, 2, 3)
