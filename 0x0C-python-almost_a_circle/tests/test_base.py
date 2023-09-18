@@ -84,3 +84,13 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_with_empty_dictionary(self):
         json_string = Base.to_json_string({})
         self.assertEqual("[]", json_string)
+
+    def test_square_load_from_file(self):
+        Square.save_to_file([Square(5, 1, 1, 1)])
+        var = Square.load_from_file()
+        self.assertEqual(1, len(var))
+
+    def test_rectangle_load_from_file(self):
+        Rectangle.save_to_file([Rectangle(10, 7, 2, 8, 1), Rectangle(2, 4)])
+        var = Rectangle.load_from_file()
+        self.assertEqual(2, len(var))
