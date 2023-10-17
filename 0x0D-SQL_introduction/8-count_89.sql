@@ -1,3 +1,5 @@
 -- Retrieve number of records for a specific id
-SELECT * from first_table
+-- id=89
+SELECT COUNT() 
+FROM first_table
 WHERE id=89;
