@@ -3,9 +3,8 @@ module.exports = class Rectangle {
   constructor (w, h) {
     if (w === undefined || w < 1 || h === undefined || h < 1) {
       return;
-    } else {
-      this.width = w;
-      this.height = h;
     }
+    this.width = w;
+    his.height = h;
   }
 };
