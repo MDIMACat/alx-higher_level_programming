@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-ADD to the database
+update in database
 """
 
 
@@ -15,9 +15,8 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    if session:
-        new_state = State()
-        new_state.name = "Louisiana"
-        session.add(new_state)
+    state = session.query(State).get(2)
+    if state:
+        state.name = "New Mexico"
+        session.add(state)
         session.commit()
-        print(new_state.id)
