@@ -1,20 +1,38 @@
 #!/usr/bin/python3
 """
-Lists all cities for the given state.
-The MySQL username, password, database name
-and the searched state are given as arguments
-to the module.
+Script that takes in the name of a state as an argument
+and lists all cities of that state, using the database
 """
 
-
-import sys
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    c = db.cursor()
-    c.execute("SELECT * FROM `cities` as `c` \
-                INNER JOIN `states` as `s` \
-                   ON `c`.`state_id` = `s`.`id` \
-                ORDER BY `c`.`id`")
-    print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
+    username = argv[1]
+    password = argv[2]
+    db_name = argv[3]
+    state_name = argv[4]
+
+    with MySQLdb.connect(
+        user=username,
+        passwd=password,
+        db=db_name
+    ) as connection:
+        cursor = connection.cursor()
+
+        query = """
+                SELECT cities.name
+                FROM cities
+                JOIN states ON cities.state_id = states.id
+                WHERE states.name = %s
+                ORDER BY cities.id;
+                """
+
+        cursor.execute(query, (state_name,))
+
+        cities = cursor.fetchall()
+
+        cursor.close()
+
+    if cities:
+        print(", ".join(city[0] for city in cities))
