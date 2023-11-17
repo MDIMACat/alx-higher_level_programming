@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Fetch all States from the given database.
+Fetch the first States from the given database.
 """
 
 
@@ -16,7 +16,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).order_by(State.id).first()
+
     if state is None:
-        print("Nothing")
+        print('Nothing')
     else:
         print("{}: {}".format(state.id, state.name))
