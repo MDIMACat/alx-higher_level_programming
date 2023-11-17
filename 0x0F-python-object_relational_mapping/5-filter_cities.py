@@ -8,34 +8,31 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    cities = ""
-
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
     state_name = argv[4]
 
     with MySQLdb.connect(
-        host="localhost",
-        port=3306,
         user=username,
         passwd=password,
-        db=db_name,
+        db=db_name
     ) as connection:
-        with connection.cursor() as cursor:
-            query = """
-                    SELECT cities.name
-                    FROM cities
-                    JOIN states ON cities.state_id = states.id
-                    WHERE states.name = %s
-                    ORDER BY cities.id;
-                    """
+        cursor = connection.cursor()
 
-            cursor.execute(query, (state_name,))
+        query = """
+                SELECT cities.name
+                FROM cities
+                JOIN states ON cities.state_id = states.id
+                WHERE states.name = %s
+                ORDER BY cities.id;
+                """
 
-            cities = cursor.fetchall()
-            cursor.close()
-            connection.close()
+        cursor.execute(query, (state_name,))
 
-        if cities:
-            print(", ".join(city[0] for city in cities))
+        cities = cursor.fetchall()
+
+        cursor.close()
+
+    if cities:
+        print(", ".join(city[0] for city in cities))
