@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 if (__name__ == '__main__'):
     engine = create_engine(f"mysql:///{argv[3]}", pool_per_ping=True)
 
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(engine)
     session = Session()
     states = session.query(State)
 
