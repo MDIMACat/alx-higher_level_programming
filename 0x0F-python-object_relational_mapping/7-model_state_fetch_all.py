@@ -14,8 +14,8 @@ if (__name__ == '__main__'):
     engine = create_engine(f"mysql:///{argv[3]}", pool_per_ping=True)
 
     Session = sessionmaker(engine)
-    session = Session()
-    states = session.query(State).order_by(State.id).all()
+    with Session() as session:
+        states = session.query(State)
 
-    for state in states:
-        print(f"{state.id}: {state.name}")
+        for state in states:
+            print(f"{state.id}: {state.name}")
