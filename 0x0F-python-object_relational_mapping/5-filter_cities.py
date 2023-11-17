@@ -10,6 +10,8 @@ from sys import argv
 
 if (__name__ == "__main__"):
 
+    cities = ""
+
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
@@ -32,7 +34,9 @@ if (__name__ == "__main__"):
     rows = cursor.fetchall()
 
     for row in rows:
-        print(row)
+        cities += f"{row[0]}, "
+
+    print(cities[0:-2])
 
     cursor.close()
     connection.close()
