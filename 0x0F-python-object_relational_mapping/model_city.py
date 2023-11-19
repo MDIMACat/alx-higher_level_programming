@@ -1,22 +1,25 @@
 #!/usr/bin/python3
 """
-Creates the Table in the database
+Creates the cities Table in the database
 """
 
 
-from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-
 
 Base = declarative_base()
 
 
 class City(Base):
-    """City class"""
-    __tablename__ = 'city'
+    """City class used to create a cities table in 
+    database
+    """
+    
+    __tablename__ = 'cities'
+    
+    id = Column('id',Integer,primary_key=True, autoincrement=True)
+    name = Column('name', String(128), nullable=False)
+    state_id = Column('state_id', Integer, ForeignKey('states.id'), nullable=False)
+    states = relationship('State')
 
-    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-    state = relationship("State", backref="City")
