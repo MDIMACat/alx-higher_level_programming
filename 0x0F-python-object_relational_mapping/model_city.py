@@ -12,14 +12,12 @@ Base = declarative_base()
 
 
 class City(Base):
-    """City class used to create a cities table in 
+    """City class used to create a cities table in
     database
     """
-    
     __tablename__ = 'cities'
-    
-    id = Column('id',Integer,primary_key=True, autoincrement=True)
-    name = Column('name', String(128), nullable=False)
-    state_id = Column('state_id', Integer, ForeignKey('states.id'), nullable=False)
-    states = relationship('State')
 
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    states = relationship('State')
