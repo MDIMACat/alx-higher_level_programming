@@ -5,5 +5,3 @@ This directory comprises bash scripts for manipulating requests and responses, a
 To execute the bash scripts, they have all been designated as executables. You can run bash scripts as follows:
  	./script
 
-For Python source code files, use the following command:
-	python3 file
