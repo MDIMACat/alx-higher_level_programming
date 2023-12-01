@@ -9,8 +9,9 @@ if __name__ == "__main__":
 
     url = argv[1]
     email = argv[2]
+    info = {'email': email}
 
-    data = parse.urlencode(email).encode('ascii')
+    data = parse.urlencode(info).encode('ascii')
 
     req = Request(url, data)
     with urlopen(req) as response:
