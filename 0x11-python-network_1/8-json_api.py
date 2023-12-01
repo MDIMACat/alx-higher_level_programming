@@ -15,14 +15,16 @@ if __name__ == "__main__":
 
     json_payload = {'q': letter}
 
-    req = requests.post(url, json=json_payload)
+    req = requests.post(url, json_payload)
 
-    if req.status_code == 200:
-        response_json = req.json()
-        if response_json:
-            user = response_json[0]
-            print("[{}] {}".format(user.get('id'), user.get('name')))
+    content = req.headers.get('Content-type')
+
+    if (content == 'application/json'):
+        json_file = eval(req.text)
+
+        if json_file != {}:
+            print(f"[{json_file.get('id')}] {json_file.get('name')}")
         else:
-            print("No result")
+            print('No result')
     else:
-        print("Not a valid JSON")
+        print('Not a valid JSON')
