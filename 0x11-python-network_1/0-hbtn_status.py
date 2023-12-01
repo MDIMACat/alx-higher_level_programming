@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    """script that fetches from a given URL"""
+"""script that fetches from a given URL"""
 
-    from urllib.request import Request, urlopen
-    from urllib.error import URLError, HTTPError
+from urllib.request import Request, urlopen
+
+if __name__ == "__main__":
 
     url = "https://alx-intranet.hbtn.io/status"
 
