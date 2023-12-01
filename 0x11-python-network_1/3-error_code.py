@@ -17,4 +17,4 @@ if __name__ == "__main__":
             print(page)
 
     except HTTPError as error:
-        print("Error code: ", error.code)
+        print(f"Error code: {error.code}")
