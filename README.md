@@ -19,3 +19,5 @@
     0x0D-SQL_introduction
     0x09-python-everything_is_object     
     0x0E-SQL_more_query
+    0x10-python-network_0
+    0x11-python-network_1
