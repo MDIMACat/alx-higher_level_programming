@@ -10,10 +10,10 @@ request(url, (error, response, body) => {
     const container = {};
     contents.forEach(content => {
       if (content.completed) {
-        if (!container[content.userID]) {
-          container[content.userID] = 1;
+        if (!container[content.userId]) {
+          container[content.userId] = 1;
         } else {
-          container[content.userID] += 1;
+          container[content.userId] += 1;
         }
       }
     });
